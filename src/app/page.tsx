@@ -12,7 +12,7 @@ export default function HomePage() {
     <main className="landing-page">
       <header className="topbar">
         <div className="brand-block">
-          <div className="brand-mark">F</div>
+          <img src="/furnistack_logo.png" alt="" className="brand-mark" />
           <div>
             <div className="brand-name">FurniStack</div>
             <div className="brand-tagline">The Complete Growth For Furniture Stores</div>
@@ -66,12 +66,12 @@ export default function HomePage() {
         <div className="hero-visual" aria-label="FurniStack lifestyle imagery">
           <div className="hero-image-wrap">
             <img
-              src="/furnistack_hero_desktop.png"
+              src="/furnistack_desktop_hero_image.png"
               alt="Luxury furniture lifestyle scene"
               className="hero-image desktop"
             />
             <img
-              src="/FurniStack_hero_image.png"
+              src="/furnistack_mobile_hero_image.png"
               alt="Luxury furniture store display"
               className="hero-image mobile"
             />

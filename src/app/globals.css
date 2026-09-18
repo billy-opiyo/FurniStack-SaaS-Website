@@ -88,16 +88,10 @@ main {
 }
 
 .brand-mark {
-    display: grid;
-    place-items: center;
     width: 38px;
     height: 38px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--gold-400), var(--walnut-900));
-    color: var(--beige-100);
-    font-weight: 700;
-    font-size: 1.1rem;
-    box-shadow: inset 0 2px 20px rgba(255, 255, 255, 0.18);
+    flex: 0 0 38px;
+    object-fit: contain;
 }
 
 .brand-name {
@@ -465,6 +459,14 @@ main {
 
     .hero-image-wrap {
         height: 500px;
+    }
+
+    .hero-image.desktop {
+        display: none;
+    }
+
+    .hero-image.mobile {
+        display: block;
     }
 
     .category-grid {
