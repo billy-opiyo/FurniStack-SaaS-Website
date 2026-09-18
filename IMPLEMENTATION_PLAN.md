@@ -3690,8 +3690,9 @@ Implement:
 Registration
 → Business creation
 → Store creation
-→ Initial setup
-→ 6-months Free Trial/subscription
+→ Initial Setup Fee of KES 5,000
+→ 6 months Free Trial
+→ Monthly Subscription depending on the Plan Initially Chosen
 → Dashboard
 
 ---
