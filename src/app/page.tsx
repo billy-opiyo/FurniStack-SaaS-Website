@@ -1,3 +1,26 @@
+import type { LucideIcon } from 'lucide-react';
+import {
+  ArrowRight,
+  BadgeCheck,
+  Compass,
+  Grid2X2,
+  BriefcaseBusiness,
+  Camera,
+  Handshake,
+  Home,
+  Globe2,
+  Menu,
+  Plus,
+  Search,
+  Send,
+  ShieldCheck,
+  Star,
+  Store,
+  UserRound,
+  UsersRound,
+  X,
+} from 'lucide-react';
+
 const stores = [
   {
     name: 'FurniStack',
@@ -33,11 +56,23 @@ const stores = [
   },
 ];
 
-const benefits = [
-  ['◇', 'Verified Merchants', 'Quality stores, real businesses.'],
-  ['⌁', 'No Middleman Fees', 'You deal directly with the store.'],
-  ['✓', 'Secure & Transparent', 'Your data and interactions are safe.'],
-  ['♧', 'A Growing Network', 'More stores, more styles, more options.'],
+const benefits: { icon: LucideIcon; title: string; description: string }[] = [
+  {
+    icon: BadgeCheck,
+    title: 'Verified Merchants',
+    description: 'Quality stores, real businesses.',
+  },
+  { icon: Handshake, title: 'No Middleman Fees', description: 'You deal directly with the store.' },
+  {
+    icon: ShieldCheck,
+    title: 'Secure & Transparent',
+    description: 'Your data and interactions are safe.',
+  },
+  {
+    icon: UsersRound,
+    title: 'A Growing Network',
+    description: 'More stores, more styles, more options.',
+  },
 ];
 
 const plans = [
@@ -83,61 +118,70 @@ export default function HomePage() {
         </nav>
         <div className="header-actions">
           <button className="icon-button" aria-label="Search">
-            ⌕
+            <Search size={16} strokeWidth={1.7} />
           </button>
           <button className="icon-button" aria-label="Account">
-            ♙
+            <UserRound size={16} strokeWidth={1.7} />
           </button>
           <a className="header-cta" href="#create-store">
             Get Started
           </a>
           <button className="menu-button" aria-label="Open menu">
-            ☰
+            <Menu size={19} strokeWidth={1.7} />
           </button>
         </div>
       </header>
 
       <section className="discovery-hero" id="home">
-        <div className="hero-backdrop" />
-        <div className="hero-copy">
-          <span className="eyebrow">
-            <i /> The furniture marketplace
-          </span>
-          <h1>
-            Discover Furniture
-            <br />
-            <em>from Trusted Stores</em>
-          </h1>
-          <p>
-            FurniStack connects you with verified furniture stores and merchants across multiple
-            brands — making it easy to find the perfect pieces for your space.
-          </p>
-          <div className="trust-grid">
-            <div>
-              <b>⌂</b>
-              <strong>Multiple Furniture Stores</strong>
-              <span>Explore a wide range of trusted merchants.</span>
-            </div>
-            <div>
-              <b>♢</b>
-              <strong>Verified &amp; Trusted Sellers</strong>
-              <span>Real stores. Authentic products.</span>
-            </div>
-            <div>
-              <b>⌕</b>
-              <strong>Easy Discovery</strong>
-              <span>Find styles, brands and collections in one place.</span>
-            </div>
-            <div>
-              <b>♧</b>
-              <strong>Direct Connection</strong>
-              <span>You browse, we connect you with the store.</span>
-            </div>
+        <picture className="hero-artwork">
+          <source media="(max-width: 640px)" srcSet="/furnistack_mobile_hero_image.png" />
+          <img
+            src="/furnistack_desktop_hero_image.png"
+            alt="Discover furniture from trusted stores"
+          />
+        </picture>
+      </section>
+
+      <section className="content-section stores-section" id="stores">
+        <div className="section-top compact">
+          <div>
+            <span className="eyebrow">Top available stores</span>
+            <h2>Featured Stores</h2>
           </div>
+          <a className="text-link" href="#stores">
+            View All Stores <ArrowRight size={13} />
+          </a>
+        </div>
+        <div className="store-grid">
+          {stores.map((store) => (
+            <article className="store-card" key={store.name}>
+              <div className="store-image" style={{ backgroundImage: `url(${store.image})` }} />
+              <div className="store-details">
+                <div className="store-title">
+                  <span className="store-avatar">
+                    <Store size={15} />
+                  </span>
+                  <div>
+                    <h3>{store.name}</h3>
+                    <span className="verified">
+                      <BadgeCheck size={10} /> Verified Store
+                    </span>
+                  </div>
+                </div>
+                <p>{store.description}</p>
+                <div className="store-rating">
+                  <span>
+                    <Star size={11} fill="currentColor" /> {store.rating}
+                  </span>
+                  <small>({store.reviews})</small>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="content-section explore-section" id="stores">
+      <section className="content-section explore-section" id="explore">
         <div className="section-top">
           <div>
             <span className="eyebrow">Explore stores</span>
@@ -149,7 +193,7 @@ export default function HomePage() {
             </p>
           </div>
           <a className="outline-link" href="#stores">
-            View All Stores <span>→</span>
+            View All Stores <ArrowRight size={13} />
           </a>
         </div>
         <article className="featured-store">
@@ -159,59 +203,34 @@ export default function HomePage() {
           <div className="featured-info">
             <div>
               <h3>FurniStack</h3>
-              <span className="verified">● Verified Store</span>
+              <span className="verified">
+                <BadgeCheck size={10} /> Verified Store
+              </span>
             </div>
             <p>Modern furniture for modern living.</p>
             <div className="store-signals">
-              <span>▣ Premium Collections</span>
-              <span>♧ Quality Assured</span>
-              <span>♢ Trusted Seller</span>
+              <span>
+                <Grid2X2 size={11} /> Premium Collections
+              </span>
+              <span>
+                <ShieldCheck size={11} /> Quality Assured
+              </span>
+              <span>
+                <BadgeCheck size={11} /> Trusted Seller
+              </span>
             </div>
           </div>
           <div className="featured-image" />
           <a className="round-arrow" href="#stores" aria-label="Visit FurniStack store">
-            →
+            <ArrowRight size={16} />
           </a>
         </article>
       </section>
 
-      <section className="content-section stores-section">
-        <div className="section-top compact">
-          <div>
-            <span className="eyebrow">Top available stores</span>
-            <h2>Featured Stores</h2>
-          </div>
-          <a className="text-link" href="#stores">
-            View All Stores&nbsp; →
-          </a>
-        </div>
-        <div className="store-grid">
-          {stores.map((store) => (
-            <article className="store-card" key={store.name}>
-              <div className="store-image" style={{ backgroundImage: `url(${store.image})` }} />
-              <div className="store-details">
-                <div className="store-title">
-                  <span className="store-avatar">⌂</span>
-                  <div>
-                    <h3>{store.name}</h3>
-                    <span className="verified">● Verified Store</span>
-                  </div>
-                </div>
-                <p>{store.description}</p>
-                <div className="store-rating">
-                  <span>★ {store.rating}</span>
-                  <small>({store.reviews})</small>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="benefits-strip" aria-label="Marketplace benefits">
-        {benefits.map(([icon, title, description]) => (
+        {benefits.map(({ icon: Icon, title, description }) => (
           <div className="benefit" key={title}>
-            <b>{icon}</b>
+            <Icon size={25} strokeWidth={1.5} />
             <div>
               <strong>{title}</strong>
               <span>{description}</span>
@@ -231,7 +250,7 @@ export default function HomePage() {
           </p>
         </div>
         <a className="header-cta" href="#plans">
-          Create Store <span>→</span>
+          Create Store <ArrowRight size={13} />
         </a>
       </section>
 
@@ -243,7 +262,7 @@ export default function HomePage() {
             <p>Choose the plan that fits your business and start growing today.</p>
           </div>
           <a className="outline-link" href="#plans">
-            View All Plans <span>→</span>
+            View All Plans <ArrowRight size={13} />
           </a>
         </div>
         <div className="plans-grid">
@@ -258,7 +277,9 @@ export default function HomePage() {
               </strong>
               <ul>
                 {plan.features.map((feature) => (
-                  <li key={feature}>✓ {feature}</li>
+                  <li key={feature}>
+                    <BadgeCheck size={11} /> {feature}
+                  </li>
                 ))}
               </ul>
               <a className={plan.popular ? 'header-cta' : 'plan-link'} href="#create-store">
@@ -282,7 +303,12 @@ export default function HomePage() {
             The trusted marketplace connecting you to verified furniture stores and merchants across
             multiple brands.
           </p>
-          <div className="socials">f&nbsp;&nbsp;𝕏&nbsp;&nbsp;◎&nbsp;&nbsp;in</div>
+          <div className="socials">
+            <Globe2 size={13} />
+            <X size={13} />
+            <Camera size={13} />
+            <BriefcaseBusiness size={13} />
+          </div>
         </div>
         <div>
           <h3>Quick Links</h3>
@@ -309,7 +335,9 @@ export default function HomePage() {
           <p>Get the latest stores, styles and offers.</p>
           <form>
             <input type="email" placeholder="Enter your email" aria-label="Email address" />
-            <button aria-label="Subscribe">→</button>
+            <button aria-label="Subscribe">
+              <Send size={13} />
+            </button>
           </form>
         </div>
         <div className="footer-bottom">
@@ -319,19 +347,24 @@ export default function HomePage() {
       </footer>
       <nav className="mobile-actions" aria-label="Mobile quick actions">
         <a href="#home">
-          ⌂<span>Home</span>
+          <Home size={17} />
+          <span>Home</span>
         </a>
         <a href="#stores">
-          ⌕<span>Browse</span>
+          <Compass size={17} />
+          <span>Browse</span>
         </a>
         <a href="#create-store">
-          ＋<span>Create</span>
+          <Plus size={17} />
+          <span>Create</span>
         </a>
         <a href="#plans">
-          ▤<span>Plans</span>
+          <Grid2X2 size={17} />
+          <span>Plans</span>
         </a>
         <a href="#home">
-          ♙<span>Profile</span>
+          <UserRound size={17} />
+          <span>Profile</span>
         </a>
       </nav>
     </main>

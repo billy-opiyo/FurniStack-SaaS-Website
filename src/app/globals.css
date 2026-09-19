@@ -128,6 +128,8 @@ button {
 
 .icon-button,
 .menu-button {
+    display: inline-grid;
+    place-items: center;
     border: 0;
     background: none;
     color: var(--cream);
@@ -155,18 +157,22 @@ button {
 
 .discovery-hero {
     position: relative;
-    min-height: 540px;
-    display: flex;
-    align-items: center;
-    padding: 54px clamp(32px, 7vw, 96px) 42px;
-    isolation: isolate;
+    padding: 14px 20px 8px;
 }
 
-.hero-backdrop {
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(15, 15, 16, .98) 0%, rgba(15, 15, 16, .82) 30%, rgba(15, 15, 16, .15) 76%, rgba(15, 15, 16, .3)), url('/furnistack_desktop_hero_image.png') 65% center / cover no-repeat;
+.hero-artwork {
+    display: block;
+    width: 100%;
+    line-height: 0;
+}
+
+.hero-artwork img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 12px;
 }
 
 .hero-copy {
@@ -281,6 +287,9 @@ button {
 
 .outline-link,
 .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
     color: var(--cream);
     font: 10px Arial, sans-serif;
 }
@@ -346,7 +355,9 @@ button {
 }
 
 .verified {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
     color: var(--cream);
     font: 8px Arial, sans-serif;
 }
@@ -366,6 +377,12 @@ button {
     gap: 26px;
     color: var(--cream);
     font: 9px Arial, sans-serif;
+}
+
+.store-signals span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .store-signals span+span {
@@ -450,11 +467,15 @@ button {
 
 .store-rating {
     display: flex;
+    align-items: center;
     gap: 5px;
     font: 10px Arial, sans-serif;
 }
 
 .store-rating span {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
     color: var(--cream);
 }
 
@@ -477,6 +498,11 @@ button {
     gap: 15px;
     padding: 0 24px;
     border-left: 1px solid var(--border);
+}
+
+.benefit>svg {
+    flex: 0 0 auto;
+    color: #e3a16a;
 }
 
 .benefit:first-child {
@@ -602,7 +628,14 @@ button {
     font: 10px/1.7 Arial, sans-serif;
 }
 
-.plan-card li::first-letter {
+.plan-card li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.plan-card li svg {
+    flex: 0 0 auto;
     color: var(--gold);
 }
 
@@ -650,6 +683,9 @@ button {
 }
 
 .socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-top: 15px;
     color: var(--cream);
     font: 12px Arial, sans-serif;
@@ -777,38 +813,7 @@ button {
     }
 
     .discovery-hero {
-        min-height: 650px;
-        align-items: end;
-        padding: 40px 22px 30px;
-    }
-
-    .hero-backdrop {
-        background: linear-gradient(0deg, rgba(15, 15, 16, .98) 5%, rgba(15, 15, 16, .72) 55%, rgba(15, 15, 16, .15)), url('/furnistack_mobile_hero_image.png') center / cover no-repeat;
-    }
-
-    .hero-copy h1 {
-        font-size: clamp(2.9rem, 13vw, 4.4rem);
-    }
-
-    .hero-copy p {
-        font-size: 12px;
-    }
-
-    .trust-grid {
-        grid-template-columns: repeat(2, 1fr);
-        margin-top: 22px;
-    }
-
-    .trust-grid>div {
-        padding: 0 10px;
-    }
-
-    .trust-grid strong {
-        font-size: 10px;
-    }
-
-    .trust-grid span {
-        font-size: 8px;
+        padding: 8px 10px 4px;
     }
 
     .content-section {
