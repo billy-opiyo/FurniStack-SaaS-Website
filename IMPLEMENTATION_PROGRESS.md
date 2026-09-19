@@ -22,3 +22,29 @@
 - `npm run lint` ✅
 
 This marks the end of Phase 1. No Phase 2 work was started.
+
+## Phase 2: Authentication & Users
+
+### Status: Complete
+
+- [x] Add Auth.js Credentials authentication with JWT sessions.
+- [x] Add Prisma-backed authentication relations and password-reset token storage.
+- [x] Add server-side bcrypt password hashing and credential verification.
+- [x] Add registration with Zod validation and duplicate-email protection.
+- [x] Add email verification token generation and verification endpoint.
+- [x] Add password reset request and single-use password reset endpoints.
+- [x] Add Auth.js route handlers and protected dashboard/admin middleware.
+- [x] Add login page using a server action and protected redirect.
+- [x] Add authentication input-validation regression tests.
+- [x] Run Prisma validation, typecheck, lint, and tests; fix discovered issues.
+
+### Verification
+
+- `npx prisma validate` ✅
+- `npm run typecheck` ✅
+- `npm run lint` ✅
+- `npm exec vitest run` ✅ (3 tests passed)
+
+Note: `npm test` emitted the stale Phase 1 placeholder command in the active terminal despite the finalized `package.json` declaring `vitest run`; direct Vitest execution passed all Phase 2 tests.
+
+Phase 2 is complete. No Phase 3 work was started.
