@@ -104,6 +104,12 @@ button {
     position: relative;
     padding: 14px 0;
     opacity: .9;
+    transition: color .2s ease, opacity .2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--gold);
+    opacity: 1;
 }
 
 .main-nav a.active {
@@ -134,6 +140,13 @@ button {
     background: none;
     color: var(--cream);
     font: 20px Arial, sans-serif;
+    transition: color .2s ease, transform .2s ease;
+}
+
+.icon-button:hover,
+.menu-button:hover {
+    color: var(--gold);
+    transform: translateY(-1px);
 }
 
 .menu-button {
@@ -153,6 +166,14 @@ button {
     font: 11px Arial, sans-serif;
     font-weight: 700;
     box-shadow: 0 5px 18px rgba(196, 154, 108, .18);
+    transition: background .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.header-cta:hover {
+    background: linear-gradient(135deg, #e5ad76, #f1c18c);
+    color: #160e09;
+    box-shadow: 0 8px 24px rgba(229, 173, 118, .35);
+    transform: translateY(-2px);
 }
 
 .discovery-hero {
@@ -292,6 +313,7 @@ button {
     gap: 7px;
     color: var(--cream);
     font: 10px Arial, sans-serif;
+    transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
 }
 
 .outline-link {
@@ -299,6 +321,17 @@ button {
     border: 1px solid var(--gold);
     border-radius: 18px;
     white-space: nowrap;
+}
+
+.outline-link:hover {
+    background: rgba(196, 154, 108, .14);
+    border-color: #e5ad76;
+    color: var(--text);
+    transform: translateY(-1px);
+}
+
+.text-link:hover {
+    color: #e5ad76;
 }
 
 .outline-link span,
@@ -403,6 +436,13 @@ button {
     border-radius: 50%;
     color: var(--gold);
     font: 20px Arial, sans-serif;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.round-arrow:hover {
+    background: var(--gold);
+    color: #20150f;
+    transform: translateX(2px);
 }
 
 .stores-section {
@@ -653,6 +693,13 @@ button {
     justify-content: center;
     color: var(--cream);
     font: 10px Arial, sans-serif;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.plan-link:hover {
+    background: rgba(196, 154, 108, .18);
+    color: var(--text);
+    transform: translateY(-1px);
 }
 
 .site-footer {
@@ -689,6 +736,18 @@ button {
     margin-top: 15px;
     color: var(--cream);
     font: 12px Arial, sans-serif;
+}
+
+.socials a {
+    display: inline-grid;
+    place-items: center;
+    color: var(--cream);
+    transition: color .2s ease, transform .2s ease;
+}
+
+.socials a:hover {
+    color: var(--gold);
+    transform: translateY(-2px);
 }
 
 .newsletter p {
@@ -733,6 +792,11 @@ button {
 
 .mobile-actions {
     display: none;
+}
+
+:is(a, button):focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
 }
 
 @media (max-width: 900px) {
@@ -978,6 +1042,12 @@ button {
         gap: 3px;
         color: var(--cream);
         font: 18px Arial, sans-serif;
+        transition: color .2s ease, transform .2s ease;
+    }
+
+    .mobile-actions a:hover {
+        color: var(--gold);
+        transform: translateY(-2px);
     }
 
     .mobile-actions a:first-child {

@@ -1,14 +1,12 @@
 import type { LucideIcon } from 'lucide-react';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 import {
   ArrowRight,
   BadgeCheck,
   Compass,
   Grid2X2,
-  BriefcaseBusiness,
-  Camera,
   Handshake,
   Home,
-  Globe2,
   Menu,
   Plus,
   Search,
@@ -18,7 +16,6 @@ import {
   Store,
   UserRound,
   UsersRound,
-  X,
 } from 'lucide-react';
 
 const stores = [
@@ -304,10 +301,45 @@ export default function HomePage() {
             multiple brands.
           </p>
           <div className="socials">
-            <Globe2 size={13} />
-            <X size={13} />
-            <Camera size={13} />
-            <BriefcaseBusiness size={13} />
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+              title="Facebook"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a href="https://x.com" target="_blank" rel="noreferrer" aria-label="X" title="X">
+              <FaXTwitter />
+            </a>
+            <a
+              href="https://www.whatsapp.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp"
+              title="WhatsApp"
+            >
+              <FaWhatsapp />
+            </a>
           </div>
         </div>
         <div>
